@@ -8,19 +8,26 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import AppHeader from './components/AppHeader';
-import TaskContainer from './containers/TaskContainer';
-import Input
- from './components/Input';
+import AppHeader from './src/components/AppHeader';
+import TaskContainer from './src/containers/TaskContainer';
+import Input from './src/components/Input';
+
+import { AppRegistry } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+
 const App = () => {
   return (
-    <SafeAreaView  style={styles.container}>
-        <AppHeader />
-        <TaskContainer />
-        <Input />
-    </SafeAreaView>
+    <PaperProvider>
+      <SafeAreaView  style={styles.container}>
+          <AppHeader />
+          <TaskContainer />
+          <Input />
+      </SafeAreaView>
+    </PaperProvider>
   );
 };
+
+// AppRegistry.registerComponent(appName, () => Main);
 
 
 const styles = StyleSheet.create({

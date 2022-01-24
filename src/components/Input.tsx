@@ -3,7 +3,6 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput,
     TouchableOpacity,
     Keyboard
 } from 'react-native';
@@ -11,6 +10,8 @@ import taskStore from '../services/stores/taskStore';
 import uuid from 'react-native-uuid';
 import { ITask } from '../services/models/ITask';
 import { observer } from 'mobx-react-lite';
+import { Button } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 
 const ObservedInput: React.FC = (): ReactElement => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -52,19 +53,17 @@ const ObservedInput: React.FC = (): ReactElement => {
     return (
         <View style={styles.container}>
             <TextInput
-                style={styles.input}
                 onChangeText={setInputValue}
                 onBlur={handleBlur}
-                value={inputValue}
                 placeholder="Buy milk"
                 ref={inputField}
+                value={inputValue}
+                style={styles.input}
             />
-            <TouchableOpacity
-                style={styles.button}
-                onPress={onSubmit}
-            >
-                <Text>Save</Text>
-            </TouchableOpacity>
+
+            <Button icon="check" mode="contained" onPress={onSubmit} style={styles.button}>
+                Save
+            </Button>
         </View >
     )
 }
@@ -89,17 +88,13 @@ const styles = StyleSheet.create({
     input: {
         height: 60,
         flex: 2,
-        borderWidth: 1,
-        padding: 10,
     },
     button: {
         alignItems: "center",
         justifyContent: 'center',
-        backgroundColor: "#DDDDDD",
-        padding: 10,
-        flex: 1,
-        height: 60,
-        borderRadius: 15
+        xflex: 1,
+        zheight: 60,
+        marginLeft: 10
     },
 })
 

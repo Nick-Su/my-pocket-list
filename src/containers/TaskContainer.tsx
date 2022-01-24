@@ -20,7 +20,8 @@ const TaskContainer: React.FC = (): ReactElement => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#f3f6f4'
     },
 });
 
