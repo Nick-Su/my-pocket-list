@@ -1,52 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import { ITask } from "../models/ITask";
-import uuid from 'react-native-uuid';
-
-const dummyTasks: ITask[] = [
-    {
-        id: uuid.v4().toString(),
-        title: 'TypeScript',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'React Native',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'JavaScript',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'Vue',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'Java',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'C#',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'Python',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'Kotlin',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'PHP',
-    },
-    {
-        id: uuid.v4().toString(),
-        title: 'C++',
-    },
-];
+import { mockTasks } from "../mock-tasks";
 
 class Task {
-    tasks: ITask[] = dummyTasks;
+    tasks: ITask[] = mockTasks;
     editableTaskId: string = '';
     editableTitle: string = '';
 

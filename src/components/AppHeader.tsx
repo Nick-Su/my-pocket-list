@@ -15,9 +15,10 @@ const styles = StyleSheet.create({
         height: 60,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'skyblue'
+        backgroundColor: '#214a96'
     },
     header: {
+        color: 'white',
         fontSize: 21
     }
 })
